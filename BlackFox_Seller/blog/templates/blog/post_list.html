@@ -1,0 +1,25 @@
+{% extends "blog/base.html"%}
+{% block content %}
+{% load static %}
+    <div class="container">
+      <h1>Pub goes here</h1>
+    </div>
+	{% for object in object_list %}
+		<main role="main" class="container" style="margin-top:20px;">
+			<div class="row">
+			<div class="col-md-8">
+				<article class="media content-section">
+				  <div class="media-body">
+				    <div class="article-metadata">
+				      <a class="me-auto" href="">{{ object.author }}</a>
+				      <small class="text-muted" style="margin-left:10px">{{ object.date_posted|date:"F d, Y"}}</small>
+				    </div>
+				    <h2><a class="article-title" href="{% url 'Post-detail' object.id %}">{{ object.title }}</a></h2>
+				    <p class="article-content">{{ object.content }}</p>
+				  </div>
+				</article>
+			</div>  
+			</div>
+		</main>
+	{%endfor%}
+{% endblock %}

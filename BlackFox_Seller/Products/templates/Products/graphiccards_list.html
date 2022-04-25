@@ -1,0 +1,30 @@
+{% extends "blog/base.html"%}
+{% load static%}
+{% block content %}
+  {% for object in object_list %}
+    <main class="container1">
+  <!-- Left Column / Headphones Image -->
+  		<div class="card" style="margin-bottom: auto;">
+    		<img class="img-fluid" src="{{object.image.url}}"alt="">
+    	</div>
+  <!-- Right Column -->
+	  <div class="right-column">
+	    <!-- Product Description -->
+	    <div class="product-description">
+	      <span><span>{{object.brand}} {{object.title}}</span></span>
+	      <h1 class="model">sold by {{object.author}}</h1>
+	      <p>{{object.description}}</p>
+	    </div>
+	    <div class="product-price">
+	    	<span>Price : {{object.price}} Dzd</span>
+		</div>
+	    <div class="product-price">
+	      <a href="{% url 'graphic-cards-detail' object.id %}" class="cart-btn">Show Details</a>
+	    </div>
+	  </div>
+	  <div class="container1">
+	    	test
+	  </div>
+	</main>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEST</title>
+</head>
+<body>
+	<h1>TEST</h1>
+	<div>{{form.choix}}</div>
+
+
+	{% if form.choix %}
+	      {{form.serie}}
+	{% endif %}
+</body>
+
+<script>
+	function picker(){
+		var strPick = document.getElementById("id_choix").value;
+	}
+		var select = document.getElementById('id_choix');
+		var value = select.options[select.selectedIndex].value;
+		var myValue = select.querySelector('[selected]').value;
+		let id_serie = document.getElementById('id_serie');
+		var valueserie = id_serie.options[id_serie.selectedIndex].value;
+
+		console.log(myValue); // en
+		picker();
+		if(value == "AMD")
+		{
+			valueserie='5700XT';
+			console.log(valueserie);
+			console.log('if passed');
+		}
+
+
+</script>
+</html>
+
+

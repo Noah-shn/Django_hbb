@@ -1,0 +1,36 @@
+{% extends "blog/base.html"%}
+{% load static%}
+{% block content %}
+	{% for monitor in monitors %}
+	    <main class="container1">
+	  <!-- Left Column / Headphones Image -->
+	  		<div class="card" style="margin-bottom: auto;">
+	    		<img class="img-fluid" src="{%static 'blog/images/benq.jpg'%}"alt="">
+	    	</div>
+	  <!-- Right Column -->
+		  <div class="right-column">
+		    <!-- Product Description -->
+		    <div class="product-description">
+		      <span>{{monitor.brand}}</span>
+		      <h1 class="model">{{monitor.title}}</h1>By<h2>{{monitor.author}}</h2>
+		      <p>Benq.</p>
+		    </div>
+		    <!-- Product Configuration -->
+		    <div class="product-configuration">	 
+		      <!-- Product Color -->
+		      <div class="pb-5">
+		        <span>Availability</span>
+		      </div>
+		    </div>
+		    <!-- Product Pricing -->
+		    <div class="product-price">
+		      <span>148$</span>
+		      <a href="#" class="cart-btn">Add to cart</a>
+		    </div>
+		  </div>
+		  <div class="container1">
+		    	test
+		  </div>
+		</main>
+	{% endfor %}
+{% endblock %}

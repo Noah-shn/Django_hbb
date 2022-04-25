@@ -1,0 +1,50 @@
+
+html, body {
+  height: auto;
+  width: 100%;
+  margin-top: 0rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #2b2b2b;
+  color : #d2d7d3;
+  overflow: auto;
+
+}
+
+{% extends "blog/base.html"%}
+{% load static%}
+{% block content %}
+  {% for product in products %}
+    <main class="container-fluid">
+    <article class="media content-section">
+        <div class="row row-cols-2">
+
+
+      <!-- Left Column / Headphones Image -->  
+
+      <div class="column">
+        <img class="img-fluid"src="{%static 'blog/images/black_fox1.jpg'%}">
+      </div>
+          
+      <!-- Product Description -->
+
+          <div class="column"><span>{{product.p_name}}</span>
+            <div class="product-description">
+              <h1>Beats EP</h1>
+              <p>Here goes the products description eg: {{product.p_descript}}</p>
+            </div>
+        </div>
+
+       <!-- Right Column -->
+
+        <div class="column">                
+            <!-- Product Pricing -->
+            <div class="product-price">
+              <span>14800,00dzd</span>
+              <a href="#" class="cart-btn">Buy</a>
+            </div>
+        </div>
+      </div>
+    </article>
+    </main>
+  {% endfor %}
+{% endblock %}

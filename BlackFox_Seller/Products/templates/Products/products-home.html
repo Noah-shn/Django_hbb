@@ -1,0 +1,15 @@
+{% extends "blog/base.html"%}
+{% block content %}
+	<div class="container">
+	 <div class="content-section">
+	 	<form method="POST">
+	 		{% csrf_token %}
+	 		<fieldset class="form-group">
+	 			<legend class="border-bottom mb-4">Delete</legend>
+	 			<h2>Are you sure about deleting this article "{{object.title}}" ?</h2>
+				</select>
+	 		</fieldset>
+	 	</form>
+	 </div>
+	</div>
+{% endblock %}
